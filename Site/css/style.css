@@ -1,0 +1,39 @@
+/*body {
+    background-color: red !important;
+}
+*/
+
+/* 1. Limpa as margens padrão que o navegador coloca e bagunça o flex */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Organiza o logo e o menu nas extremidades */
+header {
+    padding: 20px 0;
+    justify-content: center; /* Empurra um para cada lado */           /* Alinha verticalmente ao centro */
+    width: 100%;
+    background-color: #f8f8f8;
+} 
+
+
+/* Coloca os itens da lista (li) lado a lado */
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 98%;
+    list-style: none; /* Remove as bolinhas do tópico */
+    margin: 0;
+    padding: 0;       /* Cria o espaço entre os links */
+    text-transform: uppercase; /* Dá um toque mais acadêmico/artístico */
+    letter-spacing: 1px;
+}
+
+ul a {
+    text-decoration: none;
+    color: #080202;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+}
