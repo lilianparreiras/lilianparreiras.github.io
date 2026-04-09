@@ -31,9 +31,42 @@ ul {
     letter-spacing: 1px;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+
+}
+
+
 ul a {
     text-decoration: none;
     color: #080202;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    text-decoration: none;
+    color: #080202;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: linear-gradient;
+    text-align: center;
+    padding: 10px 0;
+}
+.titulo-sessao-a {
+    display: flex;
+    justify-content: space-around;
+    width: 98%;
+    padding: 20pt;
+}
+.texto-descricao-a {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente (se houver altura) */
 }
