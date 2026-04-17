@@ -10,14 +10,6 @@
     box-sizing: border-box;
 }
 
-.menu-mobile span {
-    display: block;       /* Faz o span ocupar uma linha */
-    width: 30px;          /* Largura do traço */
-    height: 3px;          /* Espessura do traço */
-    background: black;    /* Cor da linha */
-    margin: 5px 0;        /* Espaçamento entre os traços */
-    transition: 0.3s;     /* Deixa o movimento suave */
-}
 
 /* Organiza o logo e o menu nas extremidades */
 header {
@@ -87,3 +79,24 @@ footer {
     font-size: 200;
 }
 
+.menu-mobile {
+    display: block; /* Mostra o botão de 3 traços no celular */
+}
+/* --- CONFIGURAÇÃO PARA TELAS MAIORES (TABLETS E PC) --- */
+
+@media (min-width: 768px) {
+    .menu-mobile {
+        display: none; /* Esconde o botão de 3 traços no PC */
+    }
+
+    nav ul {
+        display: flex;    /* Mostra a lista na horizontal */
+        justify-content: center;
+        gap: 20px;        /* Espaço entre os links */
+        background: none;
+    }
+
+    nav ul.active {
+        display: flex;    /* Garante que continue visível */
+    }
+}
