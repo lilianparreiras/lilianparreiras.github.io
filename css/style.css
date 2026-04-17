@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f8f8f8;
 }
 
 
@@ -19,9 +20,12 @@ header {
     background-color: #f8f8f8;
 } 
 
+body {
+    background-color: red !important;
+}
 
 /* Coloca os itens da lista (li) lado a lado */
-ul {
+nav ul {
     display: flex;
     justify-content: space-around;
     width: 98%;
@@ -30,12 +34,7 @@ ul {
     padding: 0;       /* Cria o espaço entre os links */
     text-transform: uppercase; /* Dá um toque mais acadêmico/artístico */
     letter-spacing: 1px;
-}
-
-img {
-  display: block;
-  margin: 0 auto;
-
+    
 }
 
 
@@ -44,6 +43,12 @@ ul a {
     color: #080202;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 500;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+
 }
 
 footer {
