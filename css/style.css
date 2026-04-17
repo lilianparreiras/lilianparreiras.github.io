@@ -10,6 +10,15 @@
     box-sizing: border-box;
 }
 
+.menu-mobile span {
+    display: block;       /* Faz o span ocupar uma linha */
+    width: 30px;          /* Largura do traço */
+    height: 3px;          /* Espessura do traço */
+    background: black;    /* Cor da linha */
+    margin: 5px 0;        /* Espaçamento entre os traços */
+    transition: 0.3s;     /* Deixa o movimento suave */
+}
+
 /* Organiza o logo e o menu nas extremidades */
 header {
     padding: 20px 0;
@@ -77,3 +86,4 @@ footer {
     padding: 20pt;
     font-size: 200;
 }
+
