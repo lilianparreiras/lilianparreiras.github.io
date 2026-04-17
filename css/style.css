@@ -237,23 +237,42 @@ img:before {
     visibility: hidden;
 }
 
+
+/*Página "Participantes*/
+
+
+/* Ajuste global para os parágrafos de descrição */
+p.texto-descricao-a {
+    font-size: 15px;      /* Tamanho mais delicado */
+    line-height: 1.6;
+    max-width: 100%;     /* Permite que o texto ocupe a largura da coluna dele */
+    margin-top: 10px;
+}
+
+/* Ajuste específico para os nomes dos participantes */
+.nome-participante, .titulo-sessao-b {
+    font-size: 18px;      /* Diminuindo um pouco para não gritar na página */
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
 /* Container que segura os perfis */
 .grid-participantes {
     display: flex;
     flex-wrap: wrap;       /* Permite quebrar linha se não couber */
     justify-content: center;
-    gap: 50px;             /* Espaço generoso entre os participantes */
-    margin-top: 40px;
-    padding: 0 20px;
+    max-width: 1200px;
+    gap: 80px;
+    margin: 40px auto;             /* Espaço generoso entre os participantes */
+    padding: 0 00px;
 }
 
 /* O cartão de cada pessoa */
 .perfil-card {
-    flex: 1;
-    min-width: 250px;      /* Não deixa o card ficar muito espremido */
-    max-width: 350px;      /* Não deixa o card crescer demais no PC */
+    flex: 0 1 400px;
+    min-width: 300px;      /* Não deixa o card ficar muito espremido */
+    max-width: 450px;      /* Não deixa o card crescer demais no PC */
     text-align: center;
-    display: flex;
     flex-direction: column;
     align-items: center;   /* Centraliza tudo verticalmente */
 }
