@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f8f8f8;
+    background-color: #fcfaf7;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
 }
@@ -19,12 +19,13 @@ header {
     padding: 20px 0;
     justify-content: center; /* Empurra um para cada lado */           /* Alinha verticalmente ao centro */
     width: 100%;
-    background-color: #f8f8f8;
 } 
 
 body {
     background-color: red !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfaf7; /* Um tom "off-white" mais artesanal */
+    line-height: 1.6;
 }
 
 /* Coloca os itens da lista (li) lado a lado */
@@ -37,7 +38,6 @@ nav ul {
     padding: 0;       /* Cria o espaço entre os links */
     text-transform: uppercase; /* Dá um toque mais acadêmico/artístico */
     letter-spacing: 1px;
-    
 }
 
 
@@ -51,7 +51,7 @@ ul a {
 img {
   display: block;
   margin: 0 auto;
-
+  
 }
 
 footer {
@@ -87,8 +87,13 @@ footer {
     font-size: 200;
 }
 
-.menu-mobile {
-    display: block; /* Mostra o botão de 3 traços no celular */
+.menu-mobile span{
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 5px 0;
+    transition: 0.4s;
 }
 /* --- CONFIGURAÇÃO PARA TELAS MAIORES (TABLETS E PC) --- */
 
