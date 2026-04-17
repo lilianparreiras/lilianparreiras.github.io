@@ -6,12 +6,25 @@
     /* REMOVI o background-color daqui, pois ele "pinta" até os botões */
 }
 
-body {
-    padding-top: 100px; /* Ajuste para o conteúdo não ficar sob o menu fixo */
+html, body {
+    padding-top: 50px; /* distância entre o menu e o título,texto */
     background-color: #fcfaf7;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #080202;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 2. O Main é quem vai "esticar" para empurrar o footer */
+main {
+    flex: 1;                /* Isso diz ao conteúdo principal: "ocupe todo o espaço que sobrar" */
 }
 
 /* 2. HEADER FIXO */
@@ -54,17 +67,32 @@ nav ul li a {
 /* Formatação para todas as tags <p> do site */
 p {
     max-width: 650px;       /* Define um limite para o texto não ficar largo demais */
-    margin-left: auto;      /* Centraliza o bloco na esquerda */
+    margin-left: auto;      /* Distância margem esquerda */
     margin-right: auto;     /* Centraliza o bloco na direita */
-    margin-bottom: 1.5rem;  /* Dá um espaço entre um parágrafo e outro */
-    
+    margin-block-start: 2rem; /*Distância entre titulo e parágrafo*/
+    margin-bottom: 2rem;  /* Dá um espaço entre um parágrafo e outro */
     text-align: justify;     /* Centraliza as linhas de texto internamente */
     line-height: 1.8;       /* Aumenta o espaço entre linhas para não cansar a vista */
     font-size: 18px;        /* Tamanho de letra confortável */
     color: #333;            /* Um cinza bem escuro para facilitar a leitura */
-    padding: 0 20px;        /* Evita que o texto encoste na tela do celular */
+    padding: 0 10px;        /* Evita que o texto encoste na tela do celular */
 }
 
+footer p {
+    max-width: 100%;    /* Permite que o texto ocupe toda a largura no rodapé */
+    margin: 0 auto;     /* Centraliza o bloco */
+    padding: 5px 0;     /* Diminui o respiro entre as linhas de contato */
+    text-align: center; /* Garante a centralização */
+    font-size: 14px;    /* Geralmente o rodapé tem uma letra menor e mais discreta */
+    line-height: 1.4;   /* Espaçamento de linha menor que o do texto principal */
+    color: #777;        /* Uma cor mais suave para não distrair do conteúdo principal */
+}
+/* Se quiser tirar o sublinhado do link de e-mail no rodapé */
+footer p a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+}
 
 /* Centraliza os títulos h1 (título principal) e h2 (subtítulos) */
 h1, h2 {
@@ -124,12 +152,21 @@ h1, h2 {
     }
 }
 
-/* 6. OUTROS ELEMENTOS */
-img {
+/* Esconde o ícone de imagem quebrada e o texto alternativo se a imagem não carregar */
+img:not([src]), 
+img[src=""] {
+    opacity: 0;
+}
+/* Esconde a imagem se o navegador detectar erro de carregamento */
+img:before {
+    content: " ";
     display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fcfaf7; /* Mesma cor do seu fundo para camuflar */
 }
 
 #splash-screen {
@@ -152,7 +189,7 @@ img {
 }
 
 .splash-text {
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #888;
@@ -161,15 +198,16 @@ img {
 
 .splash-title {
     font-family: Impact, sans-serif; /* Ou a que você usou no menu */
-    font-size: 3rem;
+    font-size: 1.8rem;
     color: #333;
     margin-bottom: 5px;
 }
 
 .splash-sub {
+    font-size: 1.5rem;
     font-style: italic;
     color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #entrar-site {
@@ -199,8 +237,92 @@ img {
     visibility: hidden;
 }
 
-footer {
+/* Container que segura os perfis */
+.grid-participantes {
+    display: flex;
+    flex-wrap: wrap;       /* Permite quebrar linha se não couber */
+    justify-content: center;
+    gap: 50px;             /* Espaço generoso entre os participantes */
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+/* O cartão de cada pessoa */
+.perfil-card {
+    flex: 1;
+    min-width: 250px;      /* Não deixa o card ficar muito espremido */
+    max-width: 350px;      /* Não deixa o card crescer demais no PC */
     text-align: center;
-    padding: 20px 0;
-    font-family: Impact, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Centraliza tudo verticalmente */
+}
+
+/* Estilo da foto */
+.foto-perfil {
+    width: 150px;          /* Tamanho fixo para as fotos ficarem iguais */
+    height: 150px;
+    object-fit: cover;     /* Garante que a foto preencha o círculo sem distorcer */
+    border-radius: 50%;    /* Deixa a foto redonda */
+    margin-bottom: 20px;
+    border: 1px solid #eee; /* Uma borda sutil, como um detalhe de costura */
+    filter: grayscale(20%); /* Um toque artístico leve */
+}
+
+/* Nome do participante */
+.nome-participante {
+    display: block;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* Link do Lattes */
+.lattes-link a {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.lattes-link a:hover {
+    color: #000;
+    border-bottom: 1px solid #333;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    background-color: #fcfaf7;
+    border-top: 3px solid #eee;
+}
+
+/* Container das redes sociais */
+.links {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os links */
+}
+
+/* Estilo individual dos links sociais */
+.links a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    font-family: 'Segoe UI', sans-serif; /* Uma fonte mais leve para os links */
+}
+
+/* Efeito ao passar o mouse */
+.links a:hover {
+    color: #000; /* Escurece um pouco ao passar o mouse */
+    border-bottom: 1px solid #333; /* Cria uma linha fina "artesanal" ao tocar */
 }

@@ -14,3 +14,10 @@ if (btnEntrar) {
         splash.classList.add('hidden-splash');
     });
 }
+
+// Procura todas as imagens do site e, se der erro, esconde o elemento
+document.querySelectorAll('img').forEach(function(img) {
+    img.onerror = function() {
+        this.style.display = 'none';
+    };
+});
