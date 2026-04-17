@@ -51,6 +51,32 @@ nav ul li a {
     font-weight: 500;
 }
 
+/* Formatação para todas as tags <p> do site */
+p {
+    max-width: 650px;       /* Define um limite para o texto não ficar largo demais */
+    margin-left: auto;      /* Centraliza o bloco na esquerda */
+    margin-right: auto;     /* Centraliza o bloco na direita */
+    margin-bottom: 1.5rem;  /* Dá um espaço entre um parágrafo e outro */
+    
+    text-align: justify;     /* Centraliza as linhas de texto internamente */
+    line-height: 1.8;       /* Aumenta o espaço entre linhas para não cansar a vista */
+    font-size: 18px;        /* Tamanho de letra confortável */
+    color: #333;            /* Um cinza bem escuro para facilitar a leitura */
+    padding: 0 20px;        /* Evita que o texto encoste na tela do celular */
+}
+
+
+/* Centraliza os títulos h1 (título principal) e h2 (subtítulos) */
+h1, h2 {
+    text-align: center;      /* Centraliza o texto */
+    max-width: 800px;        /* Largura máxima um pouco maior que a do parágrafo */
+    margin: 2rem auto 1rem;  /* Centraliza o bloco e dá espaço em cima e embaixo */
+    font-family: Impact, sans-serif; /* Mantém a fonte que você já escolheu */
+    font-weight: 400;
+    color: #222;
+    line-height: 1.2;
+}
+
 /* 4. BOTÃO MOBILE (ESCONDIDO NO PC) */
 .menu-mobile {
     display: none; /* Não aparece no PC */
@@ -104,6 +130,73 @@ img {
     margin: 20px auto;
     max-width: 100%;
     height: auto;
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcfaf7; /* A mesma cor do seu fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica acima de tudo, inclusive do menu */
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.splash-content {
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.splash-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.splash-title {
+    font-family: Impact, sans-serif; /* Ou a que você usou no menu */
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.splash-sub {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#entrar-site {
+    background: none;
+    border: 1px solid #333;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#entrar-site:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Classe para esconder a tela */
+.hidden-splash {
+    opacity: 0;
+    visibility: hidden;
 }
 
 footer {
