@@ -1,115 +1,113 @@
-/*body {
-    background-color: red !important;
-}
-*/
-
-/* 1. Limpa as margens padrão que o navegador coloca e bagunça o flex */
+/* 1. RESET E BASE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fcfaf7;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 100;
+    /* REMOVI o background-color daqui, pois ele "pinta" até os botões */
 }
-
-
-/* Organiza o logo e o menu nas extremidades */
-header {
-    padding: 20px 0;
-    justify-content: center; /* Empurra um para cada lado */           /* Alinha verticalmente ao centro */
-    width: 100%;
-} 
 
 body {
-    background-color: red !important;
+    padding-top: 100px; /* Ajuste para o conteúdo não ficar sob o menu fixo */
+    background-color: #fcfaf7;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fcfaf7; /* Um tom "off-white" mais artesanal */
     line-height: 1.6;
+    color: #080202;
 }
 
-/* Coloca os itens da lista (li) lado a lado */
-nav ul {
+/* 2. HEADER FIXO */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fcfaf7;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-around;
-    width: 98%;
-    list-style: none; /* Remove as bolinhas do tópico */
-    margin: 0;
-    padding: 0;       /* Cria o espaço entre os links */
-    text-transform: uppercase; /* Dá um toque mais acadêmico/artístico */
-    letter-spacing: 1px;
+    justify-content: center; /* No PC, centraliza */
+    align-items: center;
 }
 
+/* 3. MENU (PC) */
+nav ul {
+    display: flex; /* APARECE no PC */
+    list-style: none;
+    gap: 20px;
+}
 
-ul a {
+nav ul li a {
     text-decoration: none;
     color: #080202;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 500;
 }
 
+/* 4. BOTÃO MOBILE (ESCONDIDO NO PC) */
+.menu-mobile {
+    display: none; /* Não aparece no PC */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-mobile span {
+    display: block;
+    width: 25px;
+    height: 1px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+/* 5. REGRAS PARA CELULAR (Telas menores que 768px) */
+@media (max-width: 768px) {
+    nav {
+        justify-content: flex-end; /* No celular, botão vai para o canto */
+    }
+
+    .menu-mobile {
+        display: block; /* APARECE no celular */
+    }
+
+    nav ul {
+        display: none; /* SOME no celular por padrão */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fcfaf7;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* O JavaScript ativa esta classe */
+    nav ul.active {
+        display: flex;
+    }
+}
+
+/* 6. OUTROS ELEMENTOS */
 img {
-  display: block;
-  margin: 0 auto;
-  
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
 }
 
 footer {
     text-align: center;
-    text-decoration: none;
-    color: #080202;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 400;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: linear-gradient;
-    text-align: center;
-    padding: 10px 0;
-}
-.titulo-sessao-a {
-    display: flex;
-    justify-content: space-around;
-    width: 98%;
-    padding: 20pt;
-}
-.texto-descricao-a {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente (se houver altura) */
-}
-.titulo-sessao-b {
-    display: flex;
-    justify-content: space-around;
-    width: 98%;
-    padding: 20pt;
-    font-size: 200;
-}
-
-.menu-mobile span{
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: #333;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-/* --- CONFIGURAÇÃO PARA TELAS MAIORES (TABLETS E PC) --- */
-
-@media (min-width: 768px) {
-    .menu-mobile {
-        display: none; /* Esconde o botão de 3 traços no PC */
-    }
-
-    nav ul {
-        display: flex;    /* Mostra a lista na horizontal */
-        justify-content: center;
-        gap: 20px;        /* Espaço entre os links */
-        background: none;
-    }
-
-    nav ul.active {
-        display: flex;    /* Garante que continue visível */
-    }
+    padding: 20px 0;
+    font-family: Impact, sans-serif;
 }
