@@ -21,3 +21,12 @@ document.querySelectorAll('img').forEach(function(img) {
         this.style.display = 'none';
     };
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const splash = document.getElementById('splash-screen');
+
+    // Se o link tiver "?p=home", a splash nem aparece
+    if (urlParams.get('p') === 'home' && splash) {
+        splash.style.display = 'none';
+    }
+});

@@ -20,11 +20,40 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #fcfaf7;
+    background-image: url('assets/textura-codigo.svg');
+    background-repeat: repeat; /* Isso cria a repetição infinita da trama */
+    background-attachment: fixed; /* O fundo fica parado enquanto o texto rola */
 }
 
 /* 2. O Main é quem vai "esticar" para empurrar o footer */
 main {
+    display: flex;
+    flex-direction: column; /* Organiza os itens um embaixo do outro */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: flex-start; /* Centraliza verticalmente (se o main tiver altura) */
+    min-height: 10vh;       /* Dá uma altura mínima para o conteúdo não ficar colado no topo */
+    padding: 20px;
     flex: 1;                /* Isso diz ao conteúdo principal: "ocupe todo o espaço que sobrar" */
+}
+
+main img {
+    max-width: 100%;        /* Faz a função do antigo 'img-fluid' */
+    height: auto;           /* Mantém a proporção da foto */
+    display: block;   
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* O 'shadow' que você tinha antes */
+    /* Centraliza a imagem especificamente */
+    display: block;
+    margin: 0 auto 20px auto; /* cima, direita, baixo, esquerda */
+    max-width: 300px; /* ou a largura que você preferir */
+
+}
+
+
+.lead {
+    max-width: 800px;       /* Evita que o texto fique largo demais em telas grandes */
+    text-align: justify;    /* Ou center, se preferir um visual mais artístico */
+    line-height: 1.6;       /* Melhora a legibilidade do texto acadêmico */
 }
 
 /* 2. HEADER FIXO */
@@ -345,3 +374,6 @@ footer {
     color: #000; /* Escurece um pouco ao passar o mouse */
     border-bottom: 1px solid #333; /* Cria uma linha fina "artesanal" ao tocar */
 }
+
+
+/*Efeito*/
