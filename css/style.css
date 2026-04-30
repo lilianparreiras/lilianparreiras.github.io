@@ -261,9 +261,10 @@ img:before {
 }
 
 /* Classe para esconder a tela */
+/* Quando ela some, ela fica transparente e ignora cliques */
 .hidden-splash {
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
 }
 
 
