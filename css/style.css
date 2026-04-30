@@ -31,7 +31,7 @@ main {
     display: flex;
     flex-direction: column; /* Organiza os itens um embaixo do outro */
     align-items: center;    /* Centraliza horizontalmente */
-    justify-content: flex-start; /* Centraliza verticalmente (se o main tiver altura) */
+    justify-content: center; /* Centraliza verticalmente (se o main tiver altura) */
     min-height: 10vh;       /* Dá uma altura mínima para o conteúdo não ficar colado no topo */
     padding: 20px;
     flex: 1;                /* Isso diz ao conteúdo principal: "ocupe todo o espaço que sobrar" */
