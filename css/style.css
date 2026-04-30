@@ -43,7 +43,7 @@ main img {
     display: block;   
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* O 'shadow' que você tinha antes */
     /* Centraliza a imagem especificamente */
-    display: block;
+    display: center;
     margin: 0 auto 20px auto; /* cima, direita, baixo, esquerda */
     max-width: 300px; /* ou a largura que você preferir */
 
