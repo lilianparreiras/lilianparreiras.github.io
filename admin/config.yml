@@ -16,4 +16,4 @@ collections:
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Data", name: "date", widget: "datetime" }
-      - { label: "Conteúdo", name: "body", widget: "html" } # Editor visual que gera HTML
+      - { label: "Conteúdo", name: "body", widget: "markdown" } # Editor visual que gera HTML
