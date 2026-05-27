@@ -377,4 +377,70 @@ footer {
 }
 
 
-/*Efeito*/
+CSS
+/* Botão Flutuante */
+#btn-diario {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #24292e; /* Cor escura estilo GitHub, mude se quiser */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+#btn-diario:hover {
+  transform: scale(1.1);
+}
+
+/* Janela Modal (Fundo escurecido) */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Caixa de conteúdo interna do Diário */
+.modal-conteudo {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow-y: auto; /* Cria barra de rolagem se tiver muitos textos */
+  position: relative;
+}
+
+/* Botão de Fechar (X) */
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+}
+.fechar:hover { color: #000; }
+
+/* Estilização básica dos posts dentro do diário */
+.post-diario {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.post-diario h3 { margin-top: 0; color: #333; }
+.post-diario small { color: #888; }

@@ -53,5 +53,17 @@
         <p>Contato: <a href="mailto:lihparreiras@gmail.com">lihparreiras@gmail.com</a></p>
     </footer>
     <script src="script.js"></script>
+    <button id="btn-diario" onclick="abrirDiario()" title="Abrir Diário">
+  📔
+    </button>
+    <div id="modal-diario" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharDiario()">&times;</span>
+            <h2>Meu Diário</h2>
+                <div id="conteudo-diario">
+                <p>Carregando memórias...</p>
+                </div>
+        </div>
+    </div>
 </body>
 </html>
