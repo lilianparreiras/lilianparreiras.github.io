@@ -52,19 +52,135 @@
         <p>Contato: <a href="mailto:lihparreiras@gmail.com">lihparreiras@gmail.com</a></p>
     </footer>
     <script src="script.js"></script>
+
+    <style>
+        /* Botão Flutuante */
+        #btn-diario {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #24292e; 
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 9999; /* Garante que fica na frente de tudo */
+            display: block !important; /* Força o botão a aparecer */
+            transition: transform 0.2s;
+        }
+
+        #btn-diario:hover {
+            transform: scale(1.1);
+        }
+
+        /* Janela Modal do Diário */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-conteudo {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 25px;
+            border-radius: 8px;
+            width: 85%;
+            max-width: 600px;
+            max-height: 70vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-family: sans-serif;
+        }
+
+        .fechar {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #aaa;
+        }
+        .fechar:hover { color: #000; }
+
+        .post-diario {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+    </style>
+
     <button id="btn-diario" onclick="abrirDiario()" title="Abrir Diário">
-  📔
+      📔
     </button>
+
     <div id="modal-diario" class="modal">
-        <div class="modal-conteudo">
-            <span class="fechar" onclick="fecharDiario()">&times;</span>
-            <h2>Meu Diário</h2>
-                <div id="conteudo-diario">
-                <p>Carregando memórias...</p>
-                </div>
+      <div class="modal-conteudo">
+        <span class="fechar" onclick="fecharDiario()">&times;</span>
+        <h2 style="color: #333; margin-top: 0;">Meu Diário</h2>
+        <hr>
+        <div id="conteudo-diario">
+          <p>Carregando memórias...</p>
         </div>
+      </div>
     </div>
-   
-    <div id="conteudo-diario"></div>
+
+    <script>
+        const usuarioGithub = "lilianparreiras"; 
+        const repoGithub = "lilianparreiras.github.io"; 
+
+        function abrirDiario() {
+          // Só aqui a janela se torna visível
+          document.getElementById("modal-diario").style.display = "block";
+          carregarPosts();
+        }
+
+        function fecharDiario() {
+          document.getElementById("modal-diario").style.display = "none";
+        }
+
+        async function carregarPosts() {
+          const container = document.getElementById("conteudo-diario");
+          try {
+            // Busca os arquivos apenas quando o botão é clicado
+            const resposta = await fetch(`https://api.github.com/repos/${usuarioGithub}/${repoGithub}/contents/diario`);
+            if (!resposta.ok) throw new Error("A pasta 'diario' ainda não foi criada ou está vazia.");
+            
+            const arquivos = await resposta.json();
+            const arquivosHtml = arquivos.filter(arq => arq.name.endsWith('.html'));
+            
+            if (arquivosHtml.length === 0) {
+              container.innerHTML = "<p style='color: #666;'>Nenhuma entrada encontrada no diário ainda.</p>";
+              return;
+            }
+
+            container.innerHTML = "";
+
+            for (const arquivo of arquivosHtml.reverse()) {
+              const resConteudo = await fetch(arquivo.download_url);
+              const textoHtml = await resConteudo.text();
+              
+              const divPost = document.createElement("div");
+              divPost.className = "post-diario";
+              divPost.innerHTML = textoHtml;
+              container.appendChild(divPost);
+            }
+          } catch (erro) {
+            console.error(erro);
+            container.innerHTML = "<p style='color: #990000;'>Comece publicando sua primeira nota pelo celular para ativar o diário!</p>";
+          }
+        }
+    </script>
 </body>
 </html>
