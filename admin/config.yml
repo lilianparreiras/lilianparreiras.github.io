@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: lilianparreiras/lilianparreiras.github.io # Substitua pelo seu
   branch: main
 
 media_folder: "img/uploads"
