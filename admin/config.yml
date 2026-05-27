@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: lilianparreiras/lilianparreiras.github.io # Substitua pelo seu
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "entradas"
+    label: "Entradas do Diário"
+    folder: "diario" # Os textos do celular vão cair nesta pasta
+    create: true
+    extension: "html" # Força a criação em HTML puro
+    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Conteúdo", name: "body", widget: "html" } # Editor visual que gera HTML
