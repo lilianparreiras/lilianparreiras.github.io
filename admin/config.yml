@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: lilianparreiras/lilianparreiras.github.io # Substitua pelo seu
   branch: main
 
