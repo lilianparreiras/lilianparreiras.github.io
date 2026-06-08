@@ -6,14 +6,18 @@ media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
 collections:
-  - name: "entradas"
-    label: "Entradas do Diário"
-    folder: "diario" # Os textos do celular vão cair nesta pasta
-    create: true
-    extension: "html" # Força a criação em HTML puro
-    format: "frontmatter"
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Data", name: "date", widget: "datetime" }
-      - { label: "Conteúdo", name: "body", widget: "markdown" } # Editor visual que gera HTML
+  - name: "conteudo"
+    label: "Conteúdo do Site"
+    files:
+      - file: "diario.json" # O CMS vai criar e alimentar este arquivo sozinho
+        label: "Meu Diário"
+        name: "diario"
+        fields:
+          - name: posts
+            label: "Postagens"
+            widget: list # Permite adicionar um post embaixo do outro
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Data", name: "date", widget: "datetime" }
+              - { label: "Escolher Foto", name: "foto", widget: "image", required: false }
+              - { label: "Texto", name: "body", widget: "markdown" }
