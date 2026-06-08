@@ -28,10 +28,31 @@
             <h2>A pesquisa</h2>
             <div class="imagem-container">
                 <img src="assets/imagem.jpg" alt="Descrição da imagem do projeto" class="imagem-destaque">
-            </div>
-            <p class="texto-descricao">
+<p class="texto-descricao">
                 O presente projeto nasceu de uma inquietação, enquanto artista, de uma experiência de trabalho em uma fábrica como costureira. O gesto repetitivo diário...
             </p>
+            </div>
+
+<div id="conteudo-pesquisa"></div>
+
+<script>
+  fetch('conteudo.json')
+    .then(r => r.json())
+    .then(data => {
+      const container = document.getElementById('conteudo-pesquisa');
+      // Filtra apenas o que for para pesquisa
+      const posts = data.posts.filter(p => p.pagina === 'pesquisa');
+      
+      posts.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'post-pesquisa';
+        let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
+        item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
+        container.appendChild(item);
+      });
+    });
+</script>
+
         </section>
     </main>
     <footer>
