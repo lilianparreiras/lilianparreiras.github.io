@@ -6,18 +6,27 @@ media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
 collections:
-  - name: "conteudo"
-    label: "Conteúdo do Site"
+  - name: "site_feed"
+    label: "Gerenciar Site"
     files:
-      - file: "diario.json" # O CMS vai criar e alimentar este arquivo sozinho
-        label: "Meu Diário"
-        name: "diario"
+      - file: "conteudo.json" 
+        label: "Publicações e Fotos"
+        name: "publicacoes"
         fields:
           - name: posts
-            label: "Postagens"
-            widget: list # Permite adicionar um post embaixo do outro
+            label: "Lista de Itens"
+            widget: list
             fields:
               - { label: "Título", name: "title", widget: "string" }
-              - { label: "Data", name: "date", widget: "datetime" }
+              
+              # 🌟 O CAMPO NOVO ESTÁ AQUI:
+              - label: "Para qual página vai?"
+                name: "pagina"
+                widget: "select"
+                options:
+                  - { label: "Página Inicial (Home)", value: "home" }
+                  - { label: "Galeria de Fotos", value: "fotos" }
+                  - { label: "Página Sobre", value: "sobre" }
+              
               - { label: "Escolher Foto", name: "foto", widget: "image", required: false }
-              - { label: "Texto", name: "body", widget: "markdown" }
+              - { label: "Texto / Descrição", name: "body", widget: "markdown" }
