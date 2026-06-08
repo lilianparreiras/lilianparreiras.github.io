@@ -10,7 +10,7 @@ collections:
     label: "Gerenciar Site"
     files:
       - file: "conteudo.json" 
-        label: "Publicações e Fotos"
+        label: "Publicações do Site"
         name: "publicacoes"
         fields:
           - name: posts
@@ -19,14 +19,14 @@ collections:
             fields:
               - { label: "Título", name: "title", widget: "string" }
               
-              # 🌟 O CAMPO NOVO ESTÁ AQUI:
-              - label: "Para qual página vai?"
+              # 🌟 Suas três páginas configuradas aqui:
+              - label: "Enviar para qual página?"
                 name: "pagina"
                 widget: "select"
                 options:
-                  - { label: "Página Inicial (Home)", value: "home" }
-                  - { label: "Galeria de Fotos", value: "fotos" }
-                  - { label: "Página Sobre", value: "sobre" }
+                  - { label: "Home", value: "home" }
+                  - { label: "Pesquisa", value: "pesquisa" }
+                  - { label: "Processos", value: "processos" }
               
               - { label: "Escolher Foto", name: "foto", widget: "image", required: false }
               - { label: "Texto / Descrição", name: "body", widget: "markdown" }
