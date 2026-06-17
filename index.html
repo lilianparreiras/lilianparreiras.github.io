@@ -1,196 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poética do cansaço</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        /* Garante que a splash ocupe a tela inteira de forma limpa nesta página */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Evita barras de rolagem na tela de entrada */
+        }
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Ou a cor de fundo do seu tema */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
+
     <div id="splash-screen">
-        <div class="splash-content">
+        <div class="splash-content" style="text-align: center; padding: 20px; max-width: 800px;">
             <p class="splash-text">Site artesanal criado para divulgação da pesquisa realizada durante o mestrado do Programa Associado de Pós-graduação em Artes Visuais (PPGAV/UFPE/UFPB)</p>
             <h1 class="splash-title">Poética do Cansaço</h1>
             <h2 class="splash-sub">O gesto repetitivo como prática artística</h2>
             <button id="entrar-site">Entrar</button>
         </div>
-        
-    </div>
-    <header>
-        <nav>
-            <button class="menu-mobile">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul>
-                <li><a href="home.html">INÍCIO</a></li>
-                <li><a href="pesquisa.html">Pesquisa</a></li>
-                <li><a href="trabalhos.html">Trabalhos anteriores</a></li>
-                <li><a href="processo.html">Processo</a></li>
-                <li><a href="publicacoes.html">Publicações</a></li>
-                <li><a href="participantes.html">Participantes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-            <img src="assets/Foto_2.JPG" class="imagem-largura-total">
-                <p class="lead">
-                Projeto de pesquisa em desenvolvimento para o Programa Associado de Pós-graduação em Artes Visuais (UFPE/UFPB), intitulado "Poética do cansaço: a arte têxtil e o gesto repetitivo como prática artística". 
-            </p>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="links">
-            <a href="https://instagram.com/lih.parreiras" target="_blank">Instagram</a>
-            <a href="https://lihparreiras.wordpress.com/" target="_blank">Portfólio</a>
-        </div>
-        <p> &copy; Lilian Parreiras Martins - 2026. Todos os direitos reservados.</p>
-        <p>Contato: <a href="mailto:lihparreiras@gmail.com">lihparreiras@gmail.com</a></p>
-    </footer>
-    <script src="script.js"></script>
-
-    <style>
-        /* Botão Flutuante */
-        #btn-diario {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #24292e; 
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 28px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            z-index: 9999; /* Garante que fica na frente de tudo */
-            display: block !important; /* Força o botão a aparecer */
-            transition: transform 0.2s;
-        }
-
-        #btn-diario:hover {
-            transform: scale(1.1);
-        }
-
-        /* Janela Modal do Diário */
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-        }
-
-        .modal-conteudo {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 25px;
-            border-radius: 8px;
-            width: 85%;
-            max-width: 600px;
-            max-height: 70vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            font-family: sans-serif;
-        }
-
-        .fechar {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #aaa;
-        }
-        .fechar:hover { color: #000; }
-
-        .post-diario {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-    </style>
-
-    <button id="btn-diario" onclick="abrirDiario()" title="Abrir Diário">
-      📔
-    </button>
-
-    <div id="modal-diario" class="modal">
-      <div class="modal-conteudo">
-        <span class="fechar" onclick="fecharDiario()">&times;</span>
-        <h2 style="color: #333; margin-top: 0;">Meu Diário</h2>
-        <hr>
-        <div id="conteudo-diario">
-          <p>Carregando memórias...</p>
-        </div>
-      </div>
     </div>
 
     <script>
-        const usuarioGithub = "lilianparreiras"; 
-        const repoGithub = "lilianparreiras.github.io"; 
-
-        function abrirDiario() {
-          // Só aqui a janela se torna visível
-          document.getElementById("modal-diario").style.display = "block";
-          carregarPosts();
-        }
-
-        function fecharDiario() {
-          document.getElementById("modal-diario").style.display = "none";
-        }
-
-        async function carregarPosts() {
-          const container = document.getElementById("conteudo-diario");
-          try {
-            // Busca os arquivos apenas quando o botão é clicado
-            const resposta = await fetch(`https://api.github.com/repos/${usuarioGithub}/${repoGithub}/contents/diario`);
-            if (!resposta.ok) throw new Error("A pasta 'diario' ainda não foi criada ou está vazia.");
-            
-            const arquivos = await resposta.json();
-            const arquivosHtml = arquivos.filter(arq => arq.name.endsWith('.html'));
-            
-            if (arquivosHtml.length === 0) {
-              container.innerHTML = "<p style='color: #666;'>Nenhuma entrada encontrada no diário ainda.</p>";
-              return;
-            }
-
-            container.innerHTML = "";
-
-            for (const arquivo of arquivosHtml.reverse()) {
-              const resConteudo = await fetch(arquivo.download_url);
-              const textoHtml = await resConteudo.text();
-              
-              const divPost = document.createElement("div");
-              divPost.className = "post-diario";
-              divPost.innerHTML = textoHtml;
-              container.appendChild(divPost);
-            }
-          } catch (erro) {
-            console.error(erro);
-            container.innerHTML = "<p style='color: #990000;'>Comece publicando sua primeira nota pelo celular para ativar o diário!</p>";
-          }
-        }
-    </script>
-    <div id="conteudo-home">
-  <div id="conteudo-home"></div>
-
-    <script>
+        // Configuração do Netlify Identity (se ainda usar para o CMS)
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -201,34 +55,10 @@
             });
         }
 
-        fetch('conteudo.json')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('conteudo-home');
-              
-                // 🌟 FILTRO: Só entram os posts onde a página escolhida foi 'home'
-                const postsFiltrados = data.posts.filter(post => post.pagina === 'home');
-              
-                postsFiltrados.forEach(post => {
-                    const postElement = document.createElement('div');
-                    postElement.className = 'bloco-home';
-                    let imagemHtml = post.foto ? `<img src="${post.foto}" style="max-width:100%;">` : '';
-
-                    postElement.innerHTML = `
-                        <h3>${post.title}</h3>
-                        ${imagemHtml}
-                        <div>${post.body}</div>
-                    `;
-                    container.appendChild(postElement);
-                }); // <--- Corrigido aqui: fechando o forEach corretamente
-            })
-            .catch(erro => console.error("Erro ao carregar o JSON:", erro)); // Boa prática adicionar um catch
-            // Verifica se o usuário veio pelo link "INÍCIO"
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('entrar') === 'true') {
-    const splash = document.getElementById("splash-screen");
-    if (splash) {
-        splash.style.display = "none"; // Esconde a tela de introdução direto
-    }
-}
+        // O SEGREDO: Ao clicar no botão, ele muda de página em vez de só esconder o elemento
+        document.getElementById("entrar-site").addEventListener("click", function() {
+            window.location.href = "home.html";
+        });
     </script>
+</body>
+</html>
