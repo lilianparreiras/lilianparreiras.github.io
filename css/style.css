@@ -190,6 +190,8 @@ h1 {
     margin-bottom: 20px;     /* Espaço que empurra o elemento de baixo (seja H2 ou parágrafo) */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 

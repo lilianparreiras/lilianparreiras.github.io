@@ -43,3 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+// Executa ao carregar a página para verificar se deve pular a Splash Screen
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('entrar') === 'true') {
+        const splash = document.getElementById("splash-screen");
+        if (splash) {
+            splash.style.display = "none";
+        }
+    }
+});

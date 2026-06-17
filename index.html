@@ -29,7 +29,7 @@
                 <span></span>
             </button>
             <ul>
-                <li><a href="index.html?p=home">INÍCIO</a></li>
+                <li><a href="index.html?entrar=true">INÍCIO</a></li>
                 <li><a href="pesquisa.html">Pesquisa</a></li>
                 <li><a href="trabalhos.html">Trabalhos anteriores</a></li>
                 <li><a href="processo.html">Processo</a></li>
@@ -223,4 +223,12 @@
                 }); // <--- Corrigido aqui: fechando o forEach corretamente
             })
             .catch(erro => console.error("Erro ao carregar o JSON:", erro)); // Boa prática adicionar um catch
+            // Verifica se o usuário veio pelo link "INÍCIO"
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('entrar') === 'true') {
+    const splash = document.getElementById("splash-screen");
+    if (splash) {
+        splash.style.display = "none"; // Esconde a tela de introdução direto
+    }
+}
     </script>
