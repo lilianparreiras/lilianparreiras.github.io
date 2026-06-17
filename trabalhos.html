@@ -26,25 +26,26 @@
     </header>
     <main class="conteudo-principal">
         <section class="container">
-            <h2>O processo</h2>
+            <h2>Trabalhos anteriores</h2>
             <div class="imagem-container">
                 <img src="assets/imagem.jpg" alt="Descrição da imagem do projeto" class="imagem-destaque">
-<p class="texto-descricao">
+            <p class="texto-descricao">
             </p>
             </div>
-<div id="conteudo-processos"></div>
+
+<div id="conteudo-pesquisa"></div>
 
 <script>
   fetch('conteudo.json')
     .then(r => r.json())
     .then(data => {
-      const container = document.getElementById('conteudo-processos');
-      // Filtra apenas o que for para processos
-      const posts = data.posts.filter(p => p.pagina === 'processos');
+      const container = document.getElementById('conteudo-pesquisa');
+      // Filtra apenas o que for para pesquisa
+      const posts = data.posts.filter(p => p.pagina === 'pesquisa');
       
       posts.forEach(p => {
         const item = document.createElement('div');
-        item.className = 'post-processos';
+        item.className = 'post-pesquisa';
         let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
         item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
         container.appendChild(item);
@@ -52,7 +53,6 @@
     });
 </script>
 
-            
         </section>
     </main>
     <footer>
