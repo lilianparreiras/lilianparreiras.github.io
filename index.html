@@ -196,32 +196,5 @@
             }
         });
         }
-<div id="conteudo-home"></div>
+    <div id="conteudo-home"></div>
 
-<script>
-  fetch('conteudo.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('conteudo-home');
-      
-      // 🌟 FILTRO: Só entram os posts onde a página escolhida foi 'home'
-      const postsFiltrados = data.posts.filter(post => post.pagina === 'home');
-      
-      postsFiltrados.forEach(post => {
-        const postElement = document.createElement('div');
-        postElement.className = 'bloco-home';
-        let imagemHtml = post.foto ? `<img src="${post.foto}" style="max-width:100%;">` : '';
-
-        postElement.innerHTML = `
-          <h3>${post.title}</h3>
-          ${imagemHtml}
-          <div>${post.body}</div>
-        `;
-        container.appendChild(postElement);
-      });
-    });
-</script>
-
-</script>
-</body>
-</html>
