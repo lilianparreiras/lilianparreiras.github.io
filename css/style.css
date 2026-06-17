@@ -164,7 +164,7 @@ header, footer {
 h2 {
     text-align: center;    
     font-size: 52px;  
-    font-family: 'Sacramento', cursive;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 24px;         
     letter-spacing: 2px;     
     color: #1f1f1f;             
@@ -181,7 +181,7 @@ h1 {
     height: auto;
     font-size: 52px;
     text-align: center;      
-    font-family: 'Sacramento', cursive; 
+    font-family: 'Courier New', Courier, monospace;
     font-weight: normal;
     color: #1f1f1f;
     line-height: 1.3;        /* Ajustado levemente para não cortar letras compridas */
@@ -211,8 +211,12 @@ h1 {
     transition: 0.3s;
 }
 
+
 /* 5. REGRAS PARA CELULAR (Telas menores que 768px) */
 @media (max-width: 768px) {
+    h1 {
+    font-size: 2rem; /* Diminue o tamanho em telas menores */
+  }
     nav {
         justify-content: flex-end; /* No celular, botão vai para o canto */
     }
