@@ -251,7 +251,7 @@ h1 {
     color: #333;
     min-width: 60px; /* Garante o alinhamento vertical dos blocos de texto */
 }
-
+*/
 /* Bloco de conteúdo ao lado do ano */
 /*
 .detalhe-item {
@@ -284,6 +284,29 @@ h1 {
     margin-bottom: 6px;
 }
 
+/* Imagem página trabalhos anteriores _ Memorial */
+
+/* Controla a caixa da imagem para que todas fiquem iguais */
+.foto-trabalho {
+    width: 100%;             /* Faz a imagem ocupar toda a largura disponível do card */
+    max-width: 400px;        /* Limita o tamanho máximo na versão Web para não ficar gigante */
+    height: 250px;           /* Força TODAS as fotos a terem exatamente a mesma altura */
+    
+    object-fit: cover;       /* MÁGICA: Corta e adapta a foto dentro do espaço sem distorcer ou amassar */
+    object-position: center; /* Garante que o corte da foto seja feito pelo centro dela */
+    
+    border-radius: 8px;      /* Deixa os cantos levemente arredondados (opcional) */
+    display: block;
+    margin-bottom: 15px;     /* Empurra o texto de baixo para não ficar colado na foto */
+}
+
+/* Ajuste fino para telas pequenas (Celular) */
+@media (max-width: 768px) {
+    .foto-trabalho {
+        max-width: 100%;     /* No celular, ela passa a ocupar a largura inteira da tela do aparelho */
+        height: 200px;       /* Reduz um pouquinho a altura no celular para ficar mais proporcional */
+    }
+}
 
 
 /* 5. REGRAS PARA CELULAR (Telas menores que 768px) */
