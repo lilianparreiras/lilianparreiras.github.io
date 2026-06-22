@@ -479,7 +479,7 @@ footer {
     font-family: 'Segoe UI', sans-serif; /* Uma fonte mais leve para os links */
 }
 
-.link a:hover {
+.links a:hover {
     color: #000;
     border-bottom: 1px solid #333;
 }
