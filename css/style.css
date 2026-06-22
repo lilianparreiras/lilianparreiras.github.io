@@ -226,6 +226,22 @@ h1 {
 .coluna-bloco {
     flex: 1;
     min-width: 300px;
+    text-align: center; /* Centraliza textos, títulos e links */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coluna-bloco .texto-descricao-a {
+    text-align: center;
+    max-width: 450px; /* Limita a largura do texto para não ficar uma linha gigante na web */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o bloco de texto na página */
+}
+
+/* Centraliza a imagem do trabalho em relação ao card */
+.foto-trabalho {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Limpa o estilo padrão da lista para virar um portfólio */
@@ -277,10 +293,7 @@ h1 {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background: #f5f5f5;
     padding: 2px 6px;
-    border-radius: 3px;
-    color: #666;
     margin-bottom: 6px;
 }
 
