@@ -17,18 +17,74 @@
             width: 100%;
             height: 100%;
             overflow: hidden; /* Evita barras de rolagem na tela de entrada */
+            background-color: #fcfaf7; /* Mesma cor de fundo do seu tema */
+            font-family: 'Inter', sans-serif;
         }
+        
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #ffffff; /* Ou a cor de fundo do seu tema */
+            background-color: #fcfaf7; 
+            background-image: url('assets/textura-codigo.svg'); /* Aplica a textura de fundo */
+            background-repeat: repeat;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
+        }
+
+        /* Formatação dos textos alinhada com a estética do site */
+        .splash-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 48px;
+            font-weight: normal;
+            color: #1f1f1f;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .splash-sub {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: normal;
+            color: #555555;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+        }
+
+        .splash-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+
+        /* Botão limpo, conversando com o estilo do menu */
+        #entrar-site {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #080202;
+            background-color: transparent;
+            border: 1px solid #080202;
+            padding: 12px 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #entrar-site:hover {
+            background-color: #080202;
+            color: #fcfaf7;
         }
     </style>
 </head>
