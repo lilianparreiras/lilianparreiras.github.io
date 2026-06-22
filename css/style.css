@@ -41,7 +41,7 @@ main {
 }
 
 img {
-    max-width: 100%;        /* Mantém o comportamento responsivo básico */
+    max-width: auto;     
     height: auto;
     display: block;   
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
@@ -107,7 +107,7 @@ nav ul li a {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 500;
 }
 
