@@ -250,12 +250,7 @@ h2 {
     margin: 20px 0;
 }
 
-/* Cada item da lista */
-.lista-producao-limpa li {
-    display: flex;
-    align-items: flex-start;
-    padding: 15px 0;
-}
+
 
 /* Destaca o ano na esquerda do item */
 /*.ano-item {
@@ -461,6 +456,7 @@ footer {
 
 /* Container das redes sociais */
 .links {
+    color: #555;
     margin-bottom: 5px;
     display: flex;
     justify-content: center;
