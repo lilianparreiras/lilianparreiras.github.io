@@ -416,36 +416,57 @@ p.texto-descricao-a {
 }
 
 /* Estilo da foto */
+/* Estilo da foto de perfil */
 .foto-perfil {
-    width: 150px;          /* Tamanho fixo para as fotos ficarem iguais */
+    width: 150px;          
     height: 150px;
-    object-fit: cover;     /* Garante que a foto preencha o círculo sem distorcer */
-    border-radius: 50%;    /* Deixa a foto redonda */
+    object-fit: cover;     
+    border-radius: 50%;    
     margin-bottom: 20px;
-    border: 1px solid #eee; /* Uma borda sutil, como um detalhe de costura */
-    filter: grayscale(20%); /* Um toque artístico leve */
+    border: 1px solid #eee; 
+    filter: grayscale(20%); 
 }
 
-/* Nome do participante (Unificado) */
+/* Nome do participante */
 .nome-participante, .titulo-sessao-b {
     display: block;
     font-family: 'Segoe UI', sans-serif;
     font-size: 18px;
-    margin-bottom: 10px; /* Mantive o valor da sua segunda declaração */
-    letter-spacing: 0.5px; /* Mantive o valor da sua segunda declaração */
+    margin-bottom: 10px; 
+    letter-spacing: 0.5px; 
 }
 
-/* Link do Lattes */
-/*.lattes-link a {
+/* CONFIGURAÇÃO UNIFICADA DOS LINKS (Lattes, Produções e Trabalhos) */
+.lattes-link a, 
+.lista-producao-limpa a, 
+.coluna-bloco a {
     font-size: 13px;
     text-transform: uppercase;
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
+    color: #888 !important; /* Força o cinza elegante padrão */
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important;
     transition: 0.3s;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: normal;
+    display: inline-block;
 }
-*/
+
+/* Efeito Hover unificado para todos os links */
+.lattes-link a:hover, 
+.lista-producao-limpa a:hover, 
+.coluna-bloco a:hover {
+    color: #000 !important; /* Vira preto ao passar o mouse */
+    border-bottom: 1px solid #333 !important; /* Exibe a linha sutil */
 }
+
+/* Garante o alinhamento correto dos itens da lista de produções */
+.lista-producao-limpa li {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+
+/* Rodapé */
 footer {
     width: 100%;
     text-align: center;
@@ -460,26 +481,22 @@ footer {
     margin-bottom: 5px;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espaço entre os links */
+    gap: 20px; 
 }
 
 /* Estilo individual dos links sociais */
 .links a {
     margin-top: 10px;
     text-decoration: none;
-    color: #555;
+    color: #555 !important;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s ease;
-    font-family: 'Segoe UI', sans-serif; /* Uma fonte mais leve para os links */
+    font-family: 'Segoe UI', sans-serif; 
 }
 
 .links a:hover {
-    color: #000;
-    border-bottom: 1px solid #333;
+    color: #000 !important;
+    border-bottom: 1px solid #333 !important;
 }
-
-
-
-
