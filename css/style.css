@@ -241,12 +241,11 @@ h1 {
 .lista-producao-limpa li {
     display: flex;
     align-items: flex-start;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee; /* Linha divisória fina e sutil */
+    padding: 15px 0;
 }
 
 /* Destaca o ano na esquerda do item */
-.ano-item {
+/*.ano-item {
     font-weight: bold;
     font-size: 0.95rem;
     color: #333;
@@ -254,20 +253,20 @@ h1 {
 }
 
 /* Bloco de conteúdo ao lado do ano */
+/*
 .detalhe-item {
     flex: 1;
 }
+*/
 
 .detalhe-item strong {
     display: block;
     font-size: 1.05rem;
     margin-bottom: 5px;
-    color: #000;
 }
 
 .detalhe-item p {
     font-size: 0.9rem;
-    color: #666;
     margin: 5px 0 10px 0;
     line-height: 1.4;
 }
