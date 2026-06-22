@@ -229,9 +229,11 @@ h1 {
 }
 
 /* Limpa o estilo padrão da lista para virar um portfólio */
+/* Limpa o estilo padrão da lista e força a remoção das bolinhas */
 .lista-producao-limpa {
-    list-style: none;
-    padding: 0;
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0 !important;
     margin: 20px 0;
 }
 
