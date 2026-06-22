@@ -160,23 +160,6 @@ header, footer {
     box-sizing: border-box;
 }
 
-
-h2 {
-    text-align: center;    
-    font-size: 52px;  
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 24px;         
-    letter-spacing: 2px;     
-    color: #1f1f1f;             
-    height: auto;
-    overflow: visible;
-    margin-top: 10px;        /* Espaço caso venha logo após um H1 */
-    margin-bottom: 40px;     /* Cria o respiro necessário antes de começar a grade/conteúdo */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
 h1 {
     height: auto;
     font-size: 52px;
@@ -194,6 +177,20 @@ h1 {
     overflow-wrap: break-word;
 }
 
+h2 {
+    text-align: center;    
+    font-size: 52px;  
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;         
+    letter-spacing: 2px;     
+    color: #1f1f1f;             
+    height: auto;
+    overflow: visible;
+    margin-top: 10px;        /* Espaço caso venha logo após um H1 */
+    margin-bottom: 40px;     /* Cria o respiro necessário antes de começar a grade/conteúdo */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 /* 4. BOTÃO MOBILE (ESCONDIDO NO PC) */
 .menu-mobile {
@@ -312,6 +309,8 @@ h1 {
     display: block;
     margin-bottom: 15px;     /* Empurra o texto de baixo para não ficar colado na foto */
 }
+
+
 
 /* Ajuste fino para telas pequenas (Celular) */
 @media (max-width: 768px) {
@@ -487,6 +486,26 @@ footer {
 .links a:hover {
     color: #000; /* Escurece um pouco ao passar o mouse */
     border-bottom: 1px solid #333; /* Cria uma linha fina "artesanal" ao tocar */
+}
+
+/* Força os links das listas de produção e dos blocos a usarem o mesmo estilo do Lattes */
+.lista-producao-limpa a,
+.coluna-bloco a {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888 !important; /* Força o cinza discreto original */
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent !important;
+    transition: 0.3s;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: normal;
+}
+
+/* Aplica o mesmo efeito de passar o mouse (hover) */
+.lista-producao-limpa a:hover,
+.coluna-bloco a:hover {
+    color: #000 !important; /* Vira preto */
+    border-bottom: 1px solid #333 !important; /* Exibe a linha sutil */
 }
 
 
