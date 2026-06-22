@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poética do cansaço</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="home.html">INÍCIO</a></li>
+                <li><a href="pesquisa.html">PESQUISA</a></li>
+                <li><a href="producao.html">PRODUÇÃO</a></li>
+                <li><a href="participantes.html">SOBRE</a></li
+            </ul>
+        </nav>
+    </header>
+    <main class="conteudo-principal">
+        <section class="container">
+            <h2>Processo</h2>
+            <div class="imagem-container">
+                <img src="assets/imagem.jpg" alt="Descrição da imagem do projeto" class="imagem-destaque">
+            <p class="texto-descricao">
+               Página destinada a mostrar todo o processo da produção artística, diário de artista, escritos, ideias, registros, experimentos, etc 
+            </p>
+            <p></p>
+            <p></p>
+            </div>
+
+<div id="conteudo-pesquisa"></div>
+
+<script>
+  fetch('conteudo.json')
+    .then(r => r.json())
+    .then(data => {
+      const container = document.getElementById('conteudo-pesquisa');
+      // Filtra apenas o que for para pesquisa
+      const posts = data.posts.filter(p => p.pagina === 'pesquisa');
+      
+      posts.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'post-pesquisa';
+        let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
+        item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
+        container.appendChild(item);
+      });
+    });
+</script>
+
+        </section>
+    </main>
+    <footer>
+        <div class="links">
+            <a href="https://instagram.com/lih.parreiras" target="_blank">Instagram</a>
+            <a href="https://lihparreiras.wordpress.com/" target="_blank">Portfólio</a>
+        </div>
+        <p> &copy; Lilian Parreiras Martins - 2026. Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:lihparreiras@gmail.com">lihparreiras@gmail.com</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>  
