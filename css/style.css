@@ -441,18 +441,15 @@ p.texto-descricao-a {
 }
 
 /* Link do Lattes */
-.lattes-link a {
+/*.lattes-link a {
     font-size: 13px;
     text-transform: uppercase;
-    color: #888;
+    color: #000;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: 0.3s;
 }
-
-.lattes-link a:hover {
-    color: #000;
-    border-bottom: 1px solid #333;
+*/
 }
 footer {
     width: 100%;
@@ -482,31 +479,11 @@ footer {
     font-family: 'Segoe UI', sans-serif; /* Uma fonte mais leve para os links */
 }
 
-/* Efeito ao passar o mouse */
-.links a:hover {
-    color: #000; /* Escurece um pouco ao passar o mouse */
-    border-bottom: 1px solid #333; /* Cria uma linha fina "artesanal" ao tocar */
+.link a:hover {
+    color: #000;
+    border-bottom: 1px solid #333;
 }
 
-/* Força os links das listas de produção e dos blocos a usarem o mesmo estilo do Lattes */
-.lista-producao-limpa a,
-.coluna-bloco a {
-    font-size: 13px;
-    text-transform: uppercase;
-    color: #888 !important; /* Força o cinza discreto original */
-    text-decoration: none !important;
-    border-bottom: 1px solid transparent !important;
-    transition: 0.3s;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: normal;
-}
-
-/* Aplica o mesmo efeito de passar o mouse (hover) */
-.lista-producao-limpa a:hover,
-.coluna-bloco a:hover {
-    color: #000 !important; /* Vira preto */
-    border-bottom: 1px solid #333 !important; /* Exibe a linha sutil */
-}
 
 
 
