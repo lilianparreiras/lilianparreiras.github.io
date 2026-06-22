@@ -212,38 +212,49 @@ h1 {
     margin: 6px 0;
     transition: 0.3s;
 }
+/* Configura as duas grandes colunas lado a lado */
+.colunas-producao {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha no celular */
+    gap: 40px;       /* Espaçamento horizontal entre as duas colunas */
+    width: 100%;
+    margin-top: 20px;
+}
 
-/* Estilização elegante para as tabelas de produção */
+/* Define que cada coluna ocupa metade do espaço no computador */
+.coluna-bloco {
+    flex: 1;
+    min-width: 300px; /* Largura mínima para disparar a quebra no celular */
+}
+
+/* Estilização limpa das tabelas internas */
 .tabela-producao {
     width: 100%;
-    border-collapse: collapse; /* Remove linhas duplas */
-    margin-top: 20px;
-    margin-bottom: 20px;
+    border-collapse: collapse;
+    margin-top: 15px;
     text-align: left;
 }
 
-/* Linha do cabeçalho (Ano, Tipo, Título...) */
 .tabela-producao th {
-    padding: 12px;
-    border-bottom: 2px solid #333; /* Linha horizontal escura */
-    font-size: 0.9rem;
+    padding: 10px;
+    border-bottom: 2px solid #333;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #555;
 }
 
-/* Células com o conteúdo */
 .tabela-producao td {
-    padding: 15px 12px;
-    border-bottom: 1px solid #eee; /* Linha divisória bem suave entre os itens */
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
     vertical-align: middle;
-    font-size: 0.95rem;
 }
 
-/* Leve destaque cinza quando o usuário passar o mouse sobre a linha */
+/* Efeito sutil ao passar o mouse nas linhas da tabela */
 .tabela-producao tbody tr:hover {
     background-color: #fafafa;
 }
+
 
 /* 5. REGRAS PARA CELULAR (Telas menores que 768px) */
 @media (max-width: 768px) {
