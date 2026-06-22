@@ -212,48 +212,77 @@ h1 {
     margin: 6px 0;
     transition: 0.3s;
 }
+
 /* Configura as duas grandes colunas lado a lado */
 .colunas-producao {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha no celular */
-    gap: 40px;       /* Espaçamento horizontal entre as duas colunas */
+    flex-wrap: wrap;
+    gap: 50px; /* Espaço generoso entre as duas colunas */
     width: 100%;
     margin-top: 20px;
 }
 
-/* Define que cada coluna ocupa metade do espaço no computador */
+/* Cada coluna ocupa metade da tela */
 .coluna-bloco {
     flex: 1;
-    min-width: 300px; /* Largura mínima para disparar a quebra no celular */
+    min-width: 300px;
 }
 
-/* Estilização limpa das tabelas internas */
-.tabela-producao {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    text-align: left;
+/* Limpa o estilo padrão da lista para virar um portfólio */
+.lista-producao-limpa {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
-.tabela-producao th {
-    padding: 10px;
-    border-bottom: 2px solid #333;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: #555;
+/* Cada item da lista */
+.lista-producao-limpa li {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee; /* Linha divisória fina e sutil */
 }
 
-.tabela-producao td {
-    padding: 12px 10px;
-    border-bottom: 1px solid #eee;
+/* Destaca o ano na esquerda do item */
+.ano-item {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #333;
+    min-width: 60px; /* Garante o alinhamento vertical dos blocos de texto */
+}
+
+/* Bloco de conteúdo ao lado do ano */
+.detalhe-item {
+    flex: 1;
+}
+
+.detalhe-item strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.detalhe-item p {
     font-size: 0.9rem;
-    vertical-align: middle;
+    color: #666;
+    margin: 5px 0 10px 0;
+    line-height: 1.4;
 }
 
-/* Efeito sutil ao passar o mouse nas linhas da tabela */
-.tabela-producao tbody tr:hover {
-    background-color: #fafafa;
+/* Uma tag discreta para os tipos acadêmicos */
+.categoria-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #666;
+    margin-bottom: 6px;
 }
+
 
 
 /* 5. REGRAS PARA CELULAR (Telas menores que 768px) */
