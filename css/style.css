@@ -336,61 +336,7 @@ img:before {
     background-color: #fcfaf7; /* Mesma cor do seu fundo para camuflar */
 }
 
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fcfaf7; /* A mesma cor do seu fundo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Fica acima de tudo, inclusive do menu */
-    transition: opacity 0.8s ease, visibility 0.8s;
-}
 
-.splash-content {
-    text-align: center;
-    animation: fadeIn 1.5s ease;
-}
-
-.splash-text {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.splash-title {
-    font-family: Impact, sans-serif; /* Ou a que você usou no menu */
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.splash-sub {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-#entrar-site {
-    background: none;
-    border: 1px solid #333;
-    padding: 10px 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-#entrar-site:hover {
-    background: #333;
-    color: #fff;
-}
 
 /* Animação de entrada */
 @keyframes fadeIn {
