@@ -26,7 +26,7 @@ collections:
                 options:
                   - { label: "Home", value: "home" }
                   - { label: "Pesquisa", value: "pesquisa" }
-                  - { label: "Processos", value: "processos" }
+    
               
               - { label: "Escolher Foto", name: "foto", widget: "image", required: false }
               - { label: "Texto / Descrição", name: "body", widget: "markdown" }
