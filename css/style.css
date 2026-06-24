@@ -181,7 +181,8 @@ h2 {
     text-align: center;    
     font-size: 52px;  
     font-family: 'Courier New', Courier, monospace;
-    font-size: 24px;         
+    font-size: 24px;
+    font-weight: 100;   
     letter-spacing: 2px;     
     color: #1f1f1f;             
     height: auto;
@@ -257,8 +258,9 @@ h2 {
     font-weight: bold;
     font-size: 0.95rem;
     color: #333;
-    min-width: 60px; /* Garante o alinhamento vertical dos blocos de texto */
-}
+    min-width: 60px; 
+}/* Garante o alinhamento vertical dos blocos de texto */
+
 */
 /* Bloco de conteúdo ao lado do ano */
 /*
