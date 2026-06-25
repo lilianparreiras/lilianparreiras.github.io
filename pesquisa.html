@@ -18,7 +18,7 @@
                 <li><a href="home.html">INÍCIO</a></li>
                 <li><a href="pesquisa.html">PESQUISA</a></li>
                 <li><a href="producao.html">PRODUÇÃO</a></li>
-                <li><a href="participantes.html">SOBRE</a></li
+                <li><a href="participantes.html">SOBRE</a></li>
             </ul>
         </nav>
     </header>
@@ -34,28 +34,27 @@
             <p>Contudo, durante o mestrado percebi que minha poética não estava centrada nas artes têxteis (apesar de ter em muitos dos trabalhos uma produção têxtil sempre envolvida durante o processo) e fazer uma pesquisa baseando-se apenas no gesto próprio do trabalho têxtil não teria diálogo com a minha produção artística.</p>
             <p>Ao analisar e revisitar minha produção artística, pude perceber que o eixo central dos meus trabalhos era o gesto em si, principalmente os gestos cotidianos e rotineiros, como o caminhar, o pedalar, o coletar, o escrever etc. Por isso senti a necessidade de ampliar a pesquisa para o gesto, não apenas o gesto das manualidades têxteis.</p>
             <p>Assim, verbos como caminhar, coletar, pegar, apanhar, colher, colecionar, acumular passaram a também fazer sentido para a investigação, juntamente com os verbos costurar, tecer, alinhavar, crochetar, tricotar.</p>
-            <p>Importante enfatizar que, o que se busca nessa pesquisa é investigar o gesto como potência de criação, e não necessariamente o "objeto de arte" resultante deste trabalho. O gesto, o ato de fazer e a ação são por si só a própria obra: uma inscrição do tempo no corpo, onde o cansaço deixa de ser passividade e se torna manifesto político e estético.</p>
+            <p>O que se busca nessa pesquisa é investigar o gesto como potência de criação, e não necessariamente o "objeto de arte" resultante deste trabalho. O gesto, o ato de fazer e a ação são por si só a própria obra: uma inscrição do tempo no corpo, onde o cansaço deixa de ser passividade e se torna manifesto político e estético.</p>
             </div>
 
-<div id="conteudo-pesquisa"></div>
 
-<script>
-  fetch('conteudo.json')
-    .then(r => r.json())
-    .then(data => {
-      const container = document.getElementById('conteudo-pesquisa');
-      // Filtra apenas o que for para pesquisa
-      const posts = data.posts.filter(p => p.pagina === 'pesquisa');
+        <script>
+            fetch('conteudo.json')
+                .then(r => r.json())
+                .then(data => {
+                const container = document.getElementById('conteudo-pesquisa');
+                // Filtra apenas o que for para pesquisa
+                const posts = data.posts.filter(p => p.pagina === 'pesquisa');
       
-      posts.forEach(p => {
-        const item = document.createElement('div');
-        item.className = 'post-pesquisa';
-        let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
-        item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
-        container.appendChild(item);
-      });
-    });
-</script>
+                posts.forEach(p => {
+                const item = document.createElement('div');
+                item.className = 'post-pesquisa';
+                let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
+                item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
+                container.appendChild(item);
+                });
+            });
+        </script>
 
         </section>
     </main>
