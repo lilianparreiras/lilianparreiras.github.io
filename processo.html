@@ -18,7 +18,7 @@
                 <li><a href="home.html">INÍCIO</a></li>
                 <li><a href="pesquisa.html">PESQUISA</a></li>
                 <li><a href="producao.html">PRODUÇÃO</a></li>
-                <li><a href="participantes.html">SOBRE</a></li
+                <li><a href="participantes.html">SOBRE</a></li>
             </ul>
         </nav>
     </header>
@@ -26,16 +26,22 @@
         <section class="container">
             <h2>Processo</h2>
             <div class="imagem-container">
-                <img src="assets/imagem.jpg" alt="Descrição da imagem do projeto" class="imagem-destaque">
-            <p class="texto-descricao">
-               Página destinada a mostrar todo o processo da produção artística, diário de artista, escritos, ideias, registros, experimentos, etc 
-            </p>
-            <p></p>
-            <p></p>
+                <p class="texto-descricao">
+                    Página destinada a mostrar todo o processo da produção artística, diário de artista, escritos, ideias, registros, experimentos, etc 
+                </p>
+            <div class="grade-fotos">
+                <img src="foto1.jpg" alt="Foto 1">
+                <img src="foto2.jpg" alt="Foto 2">
+                <img src="foto3.jpg" alt="Foto 3">
+                <img src="foto4.jpg" alt="Foto 4">
             </div>
-
-<div id="conteudo-pesquisa"></div>
-
+            <div class="video-container">
+                <video controls>
+                    <source src="seu-video-vertical.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+            
 <script>
   fetch('conteudo.json')
     .then(r => r.json())
