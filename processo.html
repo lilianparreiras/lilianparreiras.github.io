@@ -25,11 +25,12 @@
     <main class="conteudo-principal">
         <section class="container">
             <h2>Processo</h2>
+            
             <div class="imagem-container">
                 <p class="texto-descricao">
                     Página destinada a mostrar todo o processo da produção artística, diário de artista, escritos, ideias, registros, experimentos, etc 
                 </p>
-            <div class="grade-fotos">
+            </div> <div class="grade-fotos">
                 <img src="img/arquivo.jpeg" alt="Foto 1">
                 <img src="foto2.jpg" alt="Foto 2">
                 <img src="foto3.jpg" alt="Foto 3">
@@ -37,27 +38,30 @@
             </div>
             <div class="video-container">
                 <video controls>
-                    <source src="img/Coleta_cacos.MOV" type="video/mov">
+                    <source src="img/Coleta_cacos.mp4" type="video/mp4">
+                    Seu navegador não suporta este formato de vídeo.
                 </video>
             </div>
             
-<script>
-  fetch('conteudo.json')
-    .then(r => r.json())
-    .then(data => {
-      const container = document.getElementById('conteudo-pesquisa');
-      // Filtra apenas o que for para pesquisa
-      const posts = data.posts.filter(p => p.pagina === 'pesquisa');
-      
-      posts.forEach(p => {
-        const item = document.createElement('div');
-        item.className = 'post-pesquisa';
-        let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
-        item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
-        container.appendChild(item);
-      });
-    });
-</script>
+            <div id="conteudo-pesquisa"></div>
+            
+            <script>
+              fetch('conteudo.json')
+                .then(r => r.json())
+                .then(data => {
+                  const container = document.getElementById('conteudo-pesquisa');
+                  // Filtra apenas o que for para pesquisa
+                  const posts = data.posts.filter(p => p.pagina === 'pesquisa');
+                  
+                  posts.forEach(p => {
+                    const item = document.createElement('div');
+                    item.className = 'post-pesquisa';
+                    let img = p.foto ? `<img src="${p.foto}" style="max-width:100%;">` : '';
+                    item.innerHTML = `<h3>${p.title}</h3>${img}<div>${p.body}</div>`;
+                    container.appendChild(item);
+                  });
+                });
+            </script>
 
         </section>
     </main>
@@ -71,4 +75,4 @@
     </footer>
     <script src="script.js"></script>
 </body>
-</html>  
+</html>
